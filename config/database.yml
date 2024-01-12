@@ -84,3 +84,4 @@ production:
   database: rails_search_engine_production
   username: rails_search_engine
   password: <%= ENV["RAILS_SEARCH_ENGINE_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
