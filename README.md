@@ -3,8 +3,13 @@
 This project is a realtime search box where users can search for articles. The search functionality uses the Jaro-Winkler string similarity algorithm to provide relevant search results. The analytics feature displays what users were searching for.
 ## JaroWinkler Algorithm
 
-The `JaroWinkler` class is a Ruby implementation of the Jaro-Winkler string similarity algorithm. It is used in the [`SearchQuery`](app/models/search_query.rb) model to check the similarity between search queries. The class is defined in [`lib/jaro_winkler.rb`](lib/jaro_winkler.rb).
-The `JaroWinkler` class has several methods including `find_matches`, `count_transpositions`, `count_prefix`, and `calculate_similarity`. The `similarity_distance` method, used in the [`SearchQuery`](app/models/search_query.rb) model, calculates the Jaro-Winkler similarity between two strings.
+The `JaroWinkler` class is a Ruby implementation of the Jaro-Winkler string similarity algorithm. It is used in the [`SearchQuery`](app/models/search_query.rb) model to check the similarity between current search query and recently created query. The class is defined in [`lib/jaro_winkler.rb`](lib/jaro_winkler.rb), the Jaro-Winkler distance is a string similarity metric that measures the similarity between two strings. It was developed to compare strings for record linkage and approximate matching. The algorithm computes a similarity score based on the number of matching characters and the transpositions (swapping adjacent characters) between two strings, such that:
+
+```ruby
+  JaroWinkler.similarity_distance('hello', 'hallo') # => 0.88
+  JaroWinkler.similarity_distance('hello', 'hello') # => 1.0
+```
+
 
 
 ![Alt text](sample.gif)
@@ -45,16 +50,6 @@ In this case, the search engine records:
 - Hello world how are you?
 
 This is a bad example because the search engine didn't filter what the user searched for.
-## Installation
-
-1. Clone this repo to your local machine using `git clone <repo_url>`
-2. Run `bundle install` to install all the gems
-3. Run `rails db:create` to create the database
-4. Run `rails db:migrate` to migrate the database
-5. Run `rails db:seed` to seed the database
-6. Run `rails s` to start the server
-7. Open your browser and go to `localhost:3000` to view the app
-
 ## Test
 
 1. Run `rspec` to run all the tests
