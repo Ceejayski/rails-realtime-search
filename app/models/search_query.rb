@@ -46,6 +46,6 @@ class SearchQuery < ApplicationRecord
     # Check if query is similar to recent query
     def self.similiar_recent_query?(text)
       recent_search_query = current_user_query_history.last
-      recent_search_query.present? && JaroWinkler.similarity_distance(text, recent_search_query.text) > 0.75
+      recent_search_query.present? && JaroWinkler.similarity_distance(text, recent_search_query.text) > 0.8
     end
 end
