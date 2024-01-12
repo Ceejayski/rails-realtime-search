@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "daisyui": "^4.6.0",
+    "debounce": "^2.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.33"
+  }
+}

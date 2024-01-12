@@ -1,0 +1,226 @@
+require:
+  - rubocop-minitest
+  - rubocop-performance
+  - rubocop-rails
+
+AllCops:
+  SuggestExtensions: false
+  Exclude:
+    - 'bin/**/*'
+    - 'config/locales/countries/*'
+    - 'config/initializers/active_record.rb'
+    - 'config/initializers/enumerable.rb'
+    - 'config/initializers/session_store.rb'
+    - 'db/**/*'
+    - 'doc/**/*'
+    - 'legacy-webpack/**/*'
+    - 'node_modules/**/*'
+  NewCops: enable
+
+Bundler:
+  Enabled: false
+
+Layout:
+  Enabled: false
+
+Layout/CaseIndentation:
+  Enabled: true
+
+Layout/CommentIndentation:
+  Enabled: true
+
+Layout/ElseAlignment:
+  Enabled: true
+
+Layout/EmptyLineAfterGuardClause:
+  Enabled: true
+
+Layout/EndAlignment:
+  Enabled: true
+
+Style/GuardClause:
+  Enabled: true
+
+Layout/HashAlignment:
+  Enabled: true
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
+
+Layout/IndentationConsistency:
+  Enabled: true
+  EnforcedStyle: indented_internal_methods
+
+Layout/IndentationWidth:
+  Enabled: true
+
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: true
+
+Layout/SpaceAfterColon:
+  Enabled: true
+
+Layout/SpaceAfterComma:
+  Enabled: true
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+Layout/SpaceBeforeBlockBraces:
+  Enabled: true
+
+Layout/SpaceBeforeComma:
+  Enabled: true
+
+Layout/SpaceInLambdaLiteral:
+  Enabled: true
+
+Layout/TrailingEmptyLines:
+  Enabled: true
+
+Layout/TrailingWhitespace:
+  Enabled: true
+
+Lint:
+  Enabled: false
+
+Lint/Debugger:
+  Enabled: true
+
+Metrics:
+  Enabled: false
+
+Minitest:
+  Include:
+    - 'test/**/*'
+
+Minitest/AssertWithExpectedArgument:
+  Enabled: false
+
+Minitest/AssertionInLifecycleHook:
+  Enabled: false
+
+Minitest/AssertPredicate:
+  Enabled: false
+
+Minitest/EmptyLineBeforeAssertionMethods:
+  Enabled: false
+
+Minitest/RefutePredicate:
+  Enabled: false
+
+Minitest/MultipleAssertions:
+  Enabled: false
+
+Minitest/SkipWithoutReason:
+  Enabled: false
+
+Minitest/TestMethodName:
+  Enabled: false
+
+Naming:
+  Enabled: false
+
+# Small speedup, large obfuscation.
+Performance/Casecmp:
+  Enabled: false
+
+Performance/CollectionLiteralInLoop:
+  Enabled: false
+
+Performance/EndWith:
+  Enabled: false
+
+Performance/FixedSize:
+  Enabled: false
+
+Performance/TimesMap:
+  Enabled: false
+
+Rails:
+  Enabled: false
+
+Rails/ActiveRecordCallbacksOrder:
+  Enabled: true
+  Exclude:
+    - 'services/video_encoding/**/*'
+
+Rails/Presence:
+  Enabled: true
+  Exclude:
+    - 'services/video_encoding/**/*'
+
+Rails/TimeZone:
+  Enabled: true
+  Exclude:
+    - 'services/video_encoding/**/*'
+
+Rails/Validation:
+  Enabled: true
+  Exclude:
+    - 'services/video_encoding/**/*'
+
+Style:
+  Enabled: false
+
+Style/AndOr:
+  Enabled: true
+
+Style/For:
+  Enabled: true
+
+Style/HashSyntax:
+  Enabled: true
+
+Style/IfInsideElse:
+  Enabled: true
+
+Style/MethodCallWithArgsParentheses:
+  Enabled: true
+  AllowedMethods:
+    - redirect_to
+    - render
+    - head
+    - raise
+    # graph stuff
+    - field
+    - name
+    - description
+    - global_id_field
+    - argument
+    - interfaces
+    - resolves_to_class
+    - resolve
+    - value
+    - connection
+    - field_for_record_by_id
+    - possible_types
+    - instrument
+    - mutation
+    - orphan_types
+    - lazy_resolve
+    - input_field
+    - query
+    - resolve_type
+    - object_from_id
+    - id_from_object
+    - return_field
+    - coerce_input
+    - coerce_result
+
+Style/MethodDefParentheses:
+  Enabled: true
+
+Style/NegatedIf:
+  Enabled: true
+
+Style/RedundantSelf:
+  Enabled: true
+
+Style/SafeNavigation:
+  Enabled: true
+
+Style/StringLiterals:
+  Enabled: true
+
+Style/SymbolProc:
+  Enabled: true

@@ -1,0 +1,12 @@
+<div class="bg-white">
+  <%= link_to articles_path(query: query.text) do %>
+    <div class="w-full shadow p-4 my-2 hover:bg-gray-200">
+      <h3 class="text-green-600 text-md font-extrabold truncate">
+        <%= query.text %>
+      </h3>
+      <p class="text-gray-600 text-md font-semibold">
+        Last queried <%= time_tag query.updated_at, 'data-local': 'time-ago' %>
+      </p>
+    </div>
+  <% end %>
+</div>

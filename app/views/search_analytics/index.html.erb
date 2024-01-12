@@ -1,0 +1,16 @@
+<div class="mt-12 mb-4">
+
+
+  <div class="flex justify-between items-center">
+    <h1 class="text-xl font-extrabold my-4">
+      Recent Queries
+    </h1>
+    <div>
+      <h3 class="text-green-600 text-md font-extrabold truncate">
+       Total of <%= pluralize(@search_queries.size, 'Query') %> Made
+      </h3>
+    </div>
+  </div>
+  <%= render partial: 'query', collection: @search_queries.limit(10), as: :query %>
+
+</div>
